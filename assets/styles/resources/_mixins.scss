@@ -1,0 +1,93 @@
+$maxlarge: 1600px;
+$xlarge: 1440px;
+$large: 1200px;
+$medium: 1024px;
+$small: 768px;
+$tiny: 480px;
+
+@mixin breakpoint($point) {
+  @if $point == maxlarge {
+    @media (max-width: $maxlarge - 1px) {
+      @content;
+    }
+  } @else if $point == xlarge {
+    @media (max-width: $xlarge - 1px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (max-width: $large - 1px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (max-width: $medium - 1px) {
+      @content;
+    }
+  } @else if $point == mediumup {
+    @media (min-width: $medium) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (max-width: $small - 1px) {
+      @content;
+    }
+  } @else if $point == smallup {
+    @media (min-width: $small) {
+      @content;
+    }
+  } @else if $point == tiny {
+    @media (max-width: $tiny - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin gutter($prop) {
+  #{$prop}: 7.8vw;
+
+  @media (max-width: $large - 1px) {
+    #{$prop}: 3.9vw;
+  }
+
+  @media (max-width: $small - 1px) {
+    #{$prop}: 30px;
+  }
+}
+
+@mixin neg-gutter($prop) {
+  #{$prop}: -7.8vw;
+
+  @media (max-width: $large - 1px) {
+    #{$prop}: -3.9vw;
+  }
+
+  @media (max-width: $small - 1px) {
+    #{$prop}: -30px;
+  }
+}
+
+@mixin clamp(
+  $property,
+  $min-size,
+  $scaler,
+  $max-size,
+  $min-size-left: false,
+  $scaler-left: false,
+  $max-size-left: false
+) {
+  @if $min-size-left == false {
+    #{$property}: $max-size;
+    #{$property}: #{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"};
+    #{$property}: clamp($min-size, $scaler, $max-size);
+  } @else if $min-size-left == 0 or $min-size-left == auto {
+    #{$property}: $max-size $min-size-left;
+    #{$property}: #{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"}
+      $min-size-left;
+    #{$property}: clamp($min-size, $scaler, $max-size) $min-size-left;
+  } @else {
+    #{$property}: $max-size $min-size-left;
+    #{$property}: #{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"}
+      #{"min(max(#{$min-size-left}, #{$scaler-left}), #{$max-size-left})"};
+    #{$property}: clamp($min-size, $scaler, $max-size)
+      clamp($min-size-left, $scaler-left, $max-size-left);
+  }
+}

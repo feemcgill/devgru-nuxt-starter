@@ -1,0 +1,27 @@
+// Reset
+@import "vendor/reset";
+@import "vendor/flickity";
+
+// Theme
+@import "resources/mixins";
+@import "resources/vars";
+
+// Helpers
+@import "resources/helpers";
+
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  // user-select: none;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,45 @@
+#__nuxt {
+  .section-spacer {
+    height: 7vw;
+    max-height: 150px;
+
+    @include breakpoint(small) {
+      height: 50px;
+    }
+
+    &--half {
+      height: 3.5vw;
+      max-height: 100px;
+
+      @include breakpoint(small) {
+        height: 25px;
+      }
+    }
+  }
+
+  .hide-small {
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+
+  .show-small {
+    display: none;
+    @include breakpoint(small) {
+      display: block;
+    }
+  }
+
+  .hide-medium {
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  .show-medium {
+    display: none;
+    @include breakpoint(medium) {
+      display: block;
+    }
+  }
+}
