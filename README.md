@@ -1,4 +1,4 @@
-# DEVGRU NUXT STARTERPACK
+# DevGru Nuxt Starterpack
 
 ## install
 
@@ -9,7 +9,7 @@ npm i sass-loader@10.2.1 --save-dev
 
 NOTE: as of right now, latest sass loader errors with latest nuxt so we need sass-loader 10.2.1.. this is due to nuxt using an older version of webpack.. this might be fixed with future versions of nuxt
 
-## ENV VARS:
+## Environment Variables:
 
 crete a local .env file with the following and configure for current project:
 
