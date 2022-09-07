@@ -50,4 +50,14 @@ const link = `
   url
 `;
 
-export { basics, image, featured_image, tags_cats, link };
+const seo_fields = `
+  SeoFields {
+    seoTitle
+    seoDescription
+    seoImage {
+      ${image}
+    }
+  }
+`;
+
+export { basics, image, featured_image, tags_cats, link, seo_fields };

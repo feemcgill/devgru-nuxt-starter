@@ -1,12 +1,12 @@
 <template>
-  <h1>Kath it up</h1>
+  <div id="top"></div>
 </template>
 
 <script>
 export default {
   head() {
     return {
-      title: "Listen",
+      title: "Home",
     };
   },
 };
