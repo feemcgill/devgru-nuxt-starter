@@ -6,6 +6,7 @@
         <div class="page-content">
           <Nuxt />
         </div>
+        <Footer />
       </div>
     </div>
   </div>
@@ -25,7 +26,7 @@ export default {
 
   .page-content {
     width: 100%;
-    // min-height: 100vh;
+    min-height: 100vh;
 
     .inner {
       margin: 0 auto;

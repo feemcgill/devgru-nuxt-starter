@@ -1,6 +1,11 @@
 <template>
   <!-- Scroll To Element Using Hash -->
-  <a v-if="link.url.substr(0, 1) === '#'" :class="classes">{{ link.title }}</a>
+  <a
+    v-if="link.url.substr(0, 1) === '#'"
+    v-scroll-to="{ el: link.url, offset: -50 }"
+    :class="classes"
+    >{{ link.title }}</a
+  >
 
   <!-- Internal link -->
   <nuxt-link

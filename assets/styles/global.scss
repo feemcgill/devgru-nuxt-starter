@@ -2,12 +2,9 @@
 @import "vendor/reset";
 @import "vendor/flickity";
 
-// Theme
-@import "resources/mixins";
-@import "resources/vars";
-
-// Helpers
-@import "resources/helpers";
+@import "helpers";
+@import "fonts";
+@import "typography";
 
 html {
   word-spacing: 1px;
@@ -19,9 +16,4 @@ html {
 }
 
 body {
-  // user-select: none;
-
-  &.overflow-hidden {
-    overflow: hidden;
-  }
 }
